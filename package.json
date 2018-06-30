@@ -1,0 +1,8 @@
+{
+  "name": "BallUp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/philipstubbs13/BallUp.git",
+  "author": "Phil S. <philipstubbs13@gmail.com>",
+  "license": "MIT"
+}
