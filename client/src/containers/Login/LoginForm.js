@@ -13,6 +13,11 @@ const styles = theme => ({
     borderStyle: 'solid',
     borderWidth: '1px',
     borderColor: '#FA8320',
+    textAlign: 'center',
+    marginLeft: 30,
+    marginRight: 30,
+    paddingRight: 30,
+    paddingLeft: 30,
   },
 });
 
@@ -34,6 +39,9 @@ class LoginForm extends Component {
             <Paper className={classes.root} elevation={1}>
                 <Typography variant="headline" component="h3">
                 LOGIN
+                </Typography>
+                <Typography component="p">
+                    Find, organize, and play pickup basketball games in your city.
                 </Typography>
                 <a href="/auth/google" class="authenticate-button">
                     <div>

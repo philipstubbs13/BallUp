@@ -11,8 +11,6 @@ import { BrowserRouter } from "react-router-dom";
 import Login from './containers/Login';
 // Import Home page.
 // import Home from './containers/Home';
-// Import TopAppBar component.
-import TopAppBar from './components/AppBar';
 // import Footer component.
 import Footer from './components/Footer';
 
@@ -22,7 +20,6 @@ class App extends Component {
     return (
        <BrowserRouter>
         <div>
-          <TopAppBar />
         <Switch>
           <Route exact path="/" component={Login} />
           {/* <Route exact path="/home" component={Home} /> */}
