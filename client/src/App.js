@@ -10,17 +10,25 @@ import { BrowserRouter } from "react-router-dom";
 // Import Login page.
 import Login from './containers/Login';
 // Import Home page.
-import Home from './containers/Home';
+// import Home from './containers/Home';
+// Import TopAppBar component.
+import TopAppBar from './components/AppBar';
+// import Footer component.
+import Footer from './components/Footer';
 
 class App extends Component {
 
   render() {
     return (
        <BrowserRouter>
+        <div>
+          <TopAppBar />
         <Switch>
-        <Route exact path="/" component={Login} />
-        <Route exact path="/home" component={Home} />
+          <Route exact path="/" component={Login} />
+          {/* <Route exact path="/home" component={Home} /> */}
         </Switch>
+        <Footer />
+        </div>
       </BrowserRouter>
     );
   }
