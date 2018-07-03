@@ -7,10 +7,13 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+// import css for app bar
+import './AppBar.css';
 
 const styles = {
   root: {
     flexGrow: 1,
+    borderBottom: '3px solid #FA8320',
   },
   flex: {
     flex: 1,
@@ -25,7 +28,7 @@ function TopAppBar(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" className="appBar">
         <Toolbar>
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
             <MenuIcon />

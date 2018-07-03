@@ -10,6 +10,8 @@ import Typography from '@material-ui/core/Typography';
 const styles = {
   card: {
     minWidth: 275,
+    backgroundColor: '#000022',
+    borderTop: '3px solid #FA8320',
   },
   bullet: {
     display: 'inline-block',
@@ -35,7 +37,7 @@ function Footer(props) {
 
   return (
     <div>
-      <Card className={classes.card} style={{backgroundColor: "darkblue"}}>
+      <Card className={classes.card}>
         <CardContent>
           <Typography variant="headline" component="h2" className={classes.footerContent}>
             BallUp
