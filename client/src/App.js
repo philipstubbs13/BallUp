@@ -2,8 +2,6 @@
 import React, { Component } from 'react';
 // Import the App css file.
 import './App.css';
-// Import query-string (used for authentication).
-import queryString from "query-string";
 // Import third party React router library.
 import { Route, Switch } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
@@ -20,11 +18,11 @@ class App extends Component {
     return (
        <BrowserRouter>
         <div>
-        <Switch>
-          <Route exact path="/" component={Login} />
-          {/* <Route exact path="/home" component={Home} /> */}
-        </Switch>
-        <Footer />
+          <Switch>
+            <Route exact path="/" component={Login} />
+            {/* <Route exact path="/home" component={Home} /> */}
+          </Switch>
+          <Footer />
         </div>
       </BrowserRouter>
     );
