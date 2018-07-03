@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 // const routes = require('./routes');
 // const User = require('./models/User')
+var passport = require('passport'); // at header
 
 // USER AUTH REQUIREMENTS:
 //const passport = require('./passport');
@@ -30,19 +31,35 @@ if (process.env.NODE_ENV === 'production') {
 // // Add routes, both API and view
 // app.use(routes);
 
-// Route for retrieving all Users from the db
-// app.get('/user', function (req, res) {
-//     // Find all Users
-//     db.User.find({})
-//         .then(function (dbUser) {
-//             // If all Users are successfully found, send them back to the client
-//             res.json(dbUser);
-//         })
-//         .catch(function (err) {
-//             // If an error occurs, send the error back to the client
-//             res.json(err);
-//         });
-// });
+app.use(passport.initialize()); // after line no.20 (express.static)
+require("./config/passport");
+
+/* GET Google Authentication API. */
+app.get(
+    "/auth/google",
+    passport.authenticate("google", { scope: ["profile", "email"] })
+);
+app.get(
+    "/auth/google/callback",
+    passport.authenticate("google", { failureRedirect: "/", session: false }),
+    function(req, res) {
+        var token = req.user.token;
+        res.redirect("http://localhost:3000?token=" + token);
+        console.log("token", token);
+    }
+);
+
+// Current user request handler
+app.get('/api/current_user', (req, res) => {
+//   res.send(req.session);
+    res.send(req.user);
+});
+
+// Log user out of application
+app.get('/api/logout', (req, res) => {
+    req.logout();
+    res.redirect('/');
+});
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/ballup');
