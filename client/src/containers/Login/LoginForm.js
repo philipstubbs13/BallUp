@@ -18,6 +18,7 @@ const styles = theme => ({
     marginRight: 30,
     paddingRight: 30,
     paddingLeft: 30,
+    marginTop: 20,
   },
 });
 

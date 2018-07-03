@@ -13,6 +13,9 @@ const styles = {
     },
     headline: {
         fontSize: 40,
+    },
+    tagline: {
+        marginTop: 5,
     }
 };
 
@@ -31,6 +34,18 @@ class Login extends Component {
             </Typography>
             </Grid>
         </Grid>,
+        <Grid item xs={12} className={classes.headline}>
+            <Grid container spacing={16} className={classes.root} justify="center">
+            <Typography component="p" className={classes.tagline}>
+                You don't stop playing because you get old.
+            </Typography>
+            </Grid>
+            <Grid container spacing={16} className={classes.root} justify="center">
+                <Typography component="p" className={classes.tagline}>
+                    You get old because you stop playing.
+                </Typography>
+            </Grid>
+        </Grid>
         <div className="main-content-section">
             <Grid item xs={12}>
             <Grid container className={classes.root} spacing={16} justify="center">
