@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TopAppBar from '../../components/AppBar';
+import { startOfSecond } from 'date-fns';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 // Import bottom navigation
@@ -9,26 +10,35 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
-import FolderIcon from '@material-ui/icons/Folder';
 import Typography from '@material-ui/core/Typography';
 import AddCircle from '@material-ui/icons/AddCircle';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import EventAvailable from '@material-ui/icons/EventAvailable';
 import HelpOutline from '@material-ui/icons/HelpOutline';
+import Divider from '@material-ui/core/Divider';
 
 const styles = theme => ({
     root: {
         flexGrow: 1,
     },
     demo: {
-      backgroundColor: theme.palette.background.paper,
+      backgroundColor: '#FA8320',
       borderStyle: 'solid',
       borderWidth: '1px',
-      borderColor: '#FA8320',
+      borderColor: '#000022',
+      marginTop: 20,
     },
     title: {
       margin: `${theme.spacing.unit * 4}px 0 ${theme.spacing.unit * 2}px`,
       textAlign: 'center',
+      fontSize: 24,
+    },
+    listItem:{
+      backgroundColor: '#FA8320',
+      padding: 20,
+    },
+    listDivider: {
+      backgroundColor: '#000022',
     },
 });
 
@@ -53,41 +63,53 @@ class Home extends Component {
                   Get up and play!
                 </Typography>
             </Grid>
-            <Grid container className={classes.root} spacing={16} justify="center">
+            <Grid container spacing={16} className={classes.instructionText} justify="center">
+                <Typography component="p">
+                  Click below to get started
+                </Typography>
+            </Grid>
+            <Grid container spacing={16} justify="center">
               <div className={classes.demo}>
                 <List dense={dense}>
-                    <ListItem className={classes.listItem}>
-                      <ListItemIcon>
-                        <AddCircle />
-                      </ListItemIcon>
-                      <ListItemText
-                        primary="Create a game"
-                      />
-                    </ListItem>
-                    <ListItem className={classes.listItem}>
-                      <ListItemIcon>
-                        <EventAvailable />
-                      </ListItemIcon>
-                      <ListItemText
-                        primary="See upcoming games"
-                      />
-                    </ListItem>
-                    <ListItem className={classes.listItem}>
-                      <ListItemIcon>
-                        <LocationOnIcon />
-                      </ListItemIcon>
-                      <ListItemText
-                        primary="Search games nearby"
-                      />
-                    </ListItem>
-                    <ListItem className={classes.listItem}>
-                      <ListItemIcon>
-                        <HelpOutline />
-                      </ListItemIcon>
-                      <ListItemText
-                        primary="Help"
-                      />
-                    </ListItem>
+                  <ListItem className={classes.listItem}>
+                    <ListItemIcon>
+                      <AddCircle />
+                    </ListItemIcon>
+                    <ListItemText
+                      primary="Create a game"
+                      className={classes.listText}
+                    />
+                  </ListItem>
+                  <Divider className={classes.listDivider}/>
+                  <ListItem className={classes.listItem}>
+                    <ListItemIcon>
+                      <EventAvailable />
+                    </ListItemIcon>
+                    <ListItemText
+                      primary="See upcoming games"
+                      className={classes.listText}
+                    />
+                  </ListItem>
+                  <Divider className={classes.listDivider}/>
+                  <ListItem className={classes.listItem}>
+                    <ListItemIcon>
+                      <LocationOnIcon />
+                    </ListItemIcon>
+                    <ListItemText
+                      primary="Search games nearby"
+                      className={classes.listText}
+                    />
+                  </ListItem>
+                  <Divider className={classes.listDivider}/>
+                  <ListItem className={classes.listItem}>
+                    <ListItemIcon>
+                      <HelpOutline />
+                    </ListItemIcon>
+                    <ListItemText
+                      primary="Help"
+                      className={classes.listText}
+                    />
+                  </ListItem>
                 </List>
               </div>
             </Grid>
