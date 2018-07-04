@@ -23,6 +23,7 @@ import Grid from '@material-ui/core/Grid';
 const styles = {
   root: {
     backgroundColor: '#000022',
+    borderTop: '3px solid #FA8320',  
   },
   navIcon: {
       color: 'white',

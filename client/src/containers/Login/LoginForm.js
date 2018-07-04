@@ -11,7 +11,7 @@ const styles = theme => ({
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
     borderStyle: 'solid',
-    borderWidth: '1px',
+    borderWidth: '3px',
     borderColor: '#FA8320',
     textAlign: 'center',
     marginLeft: 30,

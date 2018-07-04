@@ -40,6 +40,11 @@ const styles = theme => ({
     title: {
       margin: `${theme.spacing.unit * 4}px 0 ${theme.spacing.unit * 2}px`,
       textAlign: 'center',
+      fontSize: 30,
+      color: 'white',
+    },
+    instructionalText: {
+      color: 'white',
       fontSize: 24,
     },
     listItem:{
@@ -70,7 +75,7 @@ class Home extends Component {
                 </Typography>
             </Grid>
             <Grid container spacing={16} justify="center">
-                <Typography component="p">
+                <Typography component="p" className={classes.instructionalText}>
                   Click below to get started
                 </Typography>
             </Grid>

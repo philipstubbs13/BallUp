@@ -13,10 +13,13 @@ const styles = {
     },
     headline: {
         fontSize: 40,
+        color: 'white'
     },
     tagline: {
         marginTop: 5,
-    }
+        color: 'white',
+        fontSize: 24,
+    },
 };
 
 class Login extends Component {
