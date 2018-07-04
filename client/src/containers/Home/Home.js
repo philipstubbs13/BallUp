@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import TopAppBar from '../../components/AppBar';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
+// Import bottom navigation
+import BottomNav from '../../components/BottomNav';
 
 const styles = {
     root: {
@@ -23,7 +25,8 @@ class Home extends Component {
                 
           </Grid>
           </Grid>
-        </div>  
+        </div>,
+        <BottomNav />  
       </div>
     ];
   }

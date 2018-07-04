@@ -9,7 +9,7 @@ const styles = {
   card: {
     minWidth: 275,
     backgroundColor: '#000022',
-    borderTop: '3px solid #FA8320',
+    borderTop: '5px solid #FA8320',
   },
   bullet: {
     display: 'inline-block',
