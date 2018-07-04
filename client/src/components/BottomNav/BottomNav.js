@@ -1,5 +1,7 @@
 // Import React
 import React from 'react';
+// import third-party routing library (react-router-dom)
+import { Link } from 'react-router-dom';
 // Import property types
 import PropTypes from 'prop-types';
 // Import style from material ui.
@@ -42,11 +44,11 @@ class BottomNav extends React.Component {
 
     return (
       <BottomNavigation value={value} onChange={this.handleChange} className={classes.root} justify="center">
-        <BottomNavigationAction label="Home" value="home" icon={<Home />} className={classes.navIcon} />
-        <BottomNavigationAction label="Create game" value="create_game" icon={<AddCircle />} className={classes.navIcon} />
-        <BottomNavigationAction label="Upcoming games" value="games" icon={<EventAvailable />} className={classes.navIcon} />
-        <BottomNavigationAction label="Nearby" value="nearby" icon={<LocationOnIcon />} className={classes.navIcon} />
-        <BottomNavigationAction label="Help" value="help" icon={<HelpOutline />} className={classes.navIcon} />
+        <BottomNavigationAction label="Home" value="home" icon={<Home />} className={classes.navIcon} component={Link} to="/home"/>
+        <BottomNavigationAction label="Create game" value="create_game" icon={<AddCircle />} className={classes.navIcon} component={Link} to="/newgame"/>
+        <BottomNavigationAction label="Upcoming games" value="games" icon={<EventAvailable />} className={classes.navIcon} component={Link} to="/upcominggames"/>
+        <BottomNavigationAction label="Nearby" value="nearby" icon={<LocationOnIcon />} className={classes.navIcon} component={Link} to="/nearby"/>
+        <BottomNavigationAction label="Help" value="help" icon={<HelpOutline />} className={classes.navIcon} component={Link} to="/help"/>
       </BottomNavigation>
     );
   }

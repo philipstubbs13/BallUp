@@ -1,5 +1,7 @@
 // Import React.
 import React, { Component } from 'react';
+// import third-party routing library (react-router-dom)
+import { Link } from 'react-router-dom';
 // Import Top Navigation Bar Component.
 import TopAppBar from '../../components/AppBar';
 // Import material ui grid layout.
@@ -75,7 +77,7 @@ class Home extends Component {
             <Grid container spacing={16} justify="center">
               <div className={classes.demo}>
                 <List>
-                  <ListItem className={classes.listItem}>
+                  <ListItem className={classes.listItem} component={Link} to="/newgame">
                     <ListItemIcon>
                       <AddCircle />
                     </ListItemIcon>
@@ -85,7 +87,7 @@ class Home extends Component {
                     />
                   </ListItem>
                   <Divider className={classes.listDivider}/>
-                  <ListItem className={classes.listItem}>
+                  <ListItem className={classes.listItem} component={Link} to="/upcominggames">
                     <ListItemIcon>
                       <EventAvailable />
                     </ListItemIcon>
@@ -95,7 +97,7 @@ class Home extends Component {
                     />
                   </ListItem>
                   <Divider className={classes.listDivider}/>
-                  <ListItem className={classes.listItem}>
+                  <ListItem className={classes.listItem} component={Link} to="/nearby">
                     <ListItemIcon>
                       <LocationOnIcon />
                     </ListItemIcon>
@@ -105,7 +107,7 @@ class Home extends Component {
                     />
                   </ListItem>
                   <Divider className={classes.listDivider}/>
-                  <ListItem className={classes.listItem}>
+                  <ListItem className={classes.listItem} component={Link} to="/help">
                     <ListItemIcon>
                       <HelpOutline />
                     </ListItemIcon>
