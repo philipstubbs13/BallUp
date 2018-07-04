@@ -1,22 +1,29 @@
+// Import React.
 import React, { Component } from 'react';
+// Import Top Navigation Bar Component.
 import TopAppBar from '../../components/AppBar';
-import { startOfSecond } from 'date-fns';
+// Import material ui grid layout.
 import Grid from '@material-ui/core/Grid';
+// Import material ui styling.
 import { withStyles } from '@material-ui/core/styles';
 // Import bottom navigation
 import BottomNav from '../../components/BottomNav';
+// Import List components.
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
+// Import material ui Typography component.
 import Typography from '@material-ui/core/Typography';
+// Import material ui icons
 import AddCircle from '@material-ui/icons/AddCircle';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import EventAvailable from '@material-ui/icons/EventAvailable';
 import HelpOutline from '@material-ui/icons/HelpOutline';
+// Import Divider component to separate items in list.
 import Divider from '@material-ui/core/Divider';
 
+// Home page styling.
 const styles = theme => ({
     root: {
         flexGrow: 1,
@@ -24,7 +31,7 @@ const styles = theme => ({
     demo: {
       backgroundColor: '#FA8320',
       borderStyle: 'solid',
-      borderWidth: '1px',
+      borderWidth: '3px',
       borderColor: '#000022',
       marginTop: 20,
     },
@@ -39,19 +46,16 @@ const styles = theme => ({
     },
     listDivider: {
       backgroundColor: '#000022',
+      borderWidth: '2px',
+      borderStyle: 'solid',
+      borderColor: '#0000222',
     },
 });
 
 class Home extends Component {
-
-  state = {
-    dense: false,
-    secondary: false,
-  };
   
   render() {
     const {classes} = this.props;
-    const { dense, secondary } = this.state;
 
     return [
       <div>
@@ -63,14 +67,14 @@ class Home extends Component {
                   Get up and play!
                 </Typography>
             </Grid>
-            <Grid container spacing={16} className={classes.instructionText} justify="center">
+            <Grid container spacing={16} justify="center">
                 <Typography component="p">
                   Click below to get started
                 </Typography>
             </Grid>
             <Grid container spacing={16} justify="center">
               <div className={classes.demo}>
-                <List dense={dense}>
+                <List>
                   <ListItem className={classes.listItem}>
                     <ListItemIcon>
                       <AddCircle />
