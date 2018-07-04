@@ -22,6 +22,10 @@ const styles = {
     marginLeft: -12,
     marginRight: 20,
   },
+  welcomeUser: {
+    textAlign: 'center',
+    marginRight: 30,
+  },
 };
 
 function TopAppBar(props) {
@@ -36,7 +40,10 @@ function TopAppBar(props) {
           <Typography variant="title" color="inherit" className={classes.flex}>
             BallUp
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Typography variant="title" color="inherit" className={classes.welcomeUser}>
+            Welcome, Jax
+          </Typography>
+          <Button color="inherit">Logout</Button>
         </Toolbar>
       </AppBar>
     </div>
