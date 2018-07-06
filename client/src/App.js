@@ -1,5 +1,5 @@
 // Import React
-import React, { Component } from 'react';
+import React from 'react';
 // Import the App css file.
 import './App.css';
 // Import third party React router library.
@@ -10,21 +10,22 @@ import Login from './containers/Login';
 import Home from './containers/Home';
 // import Footer component.
 import Footer from './components/Footer';
+// import CreateGame component
+import CreateGame from './containers/CreateGame';
 
-class App extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <div>
-          <Switch>
-            <Route exact path="/" component={Login} />
-            <Route exact path="/home" component={Home} />
-          </Switch>
-          <Footer />
-        </div>
-      </BrowserRouter>
-    );
-  }
+function App() {
+  return (
+    <BrowserRouter>
+      <div>
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/newgame" component={CreateGame} />
+        </Switch>
+        <Footer />
+      </div>
+    </BrowserRouter>
+  );
 }
 
 // export the App component.

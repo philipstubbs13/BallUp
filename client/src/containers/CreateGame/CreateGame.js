@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import BottomNav from '../../components/BottomNav';
 // Import Top Navigation Bar Component.
 import TopAppBar from '../../components/AppBar';
+import CreateGameForm from './CreateGameForm';
 
 // Home page styling.
 const styles = theme => ({
@@ -40,13 +41,16 @@ class CreateGame extends Component {
           <Grid item xs={12}>
             <Grid container className={classes.root} spacing={16} justify="center">
               <Typography variant="title" className={classes.title}>
-                Get up and play!
+                Ready to play?
               </Typography>
             </Grid>
             <Grid container spacing={16} justify="center">
               <Typography component="p" className={classes.instructionalText}>
-                Click below to get started
+                Fill out the form below to set up a game near you.
               </Typography>
+            </Grid>
+            <Grid container spacing={16} justify="center">
+              <CreateGameForm />
             </Grid>
           </Grid>
         </div>
