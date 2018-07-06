@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import queryString from "query-string";
+// import queryString from "query-string";
 
 const styles = theme => ({
   root: {
@@ -23,7 +23,6 @@ const styles = theme => ({
 });
 
 class LoginForm extends Component {
-
 // componentWillMount() {
 //     var query = queryString.parse(this.props.location.search);
 //     if (query.token) {
@@ -36,23 +35,23 @@ class LoginForm extends Component {
     const { classes } = this.props;
 
     return (
-        <div>
-            <Paper className={classes.root} elevation={1}>
-                <Typography variant="headline" component="h3">
-                LOGIN
-                </Typography>
-                <Typography component="p">
-                    Find, organize, and play pickup basketball games in your city.
-                </Typography>
-                <a href="/auth/google" class="authenticate-button">
-                    <div>
-                        <span class="svgIcon t-popup-svg">
-                        <svg
-                            class="svgIcon-use"
-                            width="25"
-                            height="37"
-                            viewBox="0 0 25 25"
-                        >
+      <div>
+        <Paper className={classes.root} elevation={1}>
+          <Typography variant="headline" component="h3">
+            LOGIN
+          </Typography>
+          <Typography component="p">
+            Find, organize, and play pickup basketball games in your city.
+          </Typography>
+          <a href="/auth/google" className="authenticate-button">
+            <div>
+              <span className="svgIcon t-popup-svg">
+                <svg
+                  className="svgIcon-use"
+                  width="25"
+                  height="37"
+                  viewBox="0 0 25 25"
+                >
                             <g fill="none" fill-rule="evenodd">
                             <path
                                 d="M20.66 12.693c0-.603-.054-1.182-.155-1.738H12.5v3.287h4.575a3.91 3.91 0 0 1-1.697 2.566v2.133h2.747c1.608-1.48 2.535-3.65 2.535-6.24z"
