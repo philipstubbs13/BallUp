@@ -5,6 +5,8 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Paper from '@material-ui/core/Paper';
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
 // Import material ui Typography component.
 import Typography from '@material-ui/core/Typography';
 // import css
@@ -41,6 +43,15 @@ const styles = theme => ({
   },
   formError: {
     color: 'red',
+  },
+  menu: {
+    width: 150,
+  },
+  textField: {
+    width: 150,
+  },
+  cityField: {
+    maxWidth: 175,
   },
 });
 
@@ -187,14 +198,23 @@ class CreateGameForm extends React.Component {
     event.preventDefault();
     this.setState({
       gameDate: '',
+      gameDateError: '',
       gameTime: '',
+      gameTimeError: '',
       gameAgeGroup: '',
+      gameAgeGroupError: '',
       gameGender: '',
+      gameGenderError: '',
       gameLocation: '',
+      gameLocationError: '',
       gameAddress: '',
+      gameAddressError: '',
       gameCity: '',
+      gameCityError: '',
       gameState: '',
+      gameStateError: '',
       gameZip: '',
+      gameZipError: '',
     });
   }
 
@@ -231,16 +251,55 @@ class CreateGameForm extends React.Component {
         </FormControl>
 
         <FormControl className={classes.formControl}>
-          <InputLabel htmlFor="game-age-group">Age group</InputLabel>
-          <Input id="game-age-group" value={gameAgeGroup} onChange={this.handleGameAgeGroupChange} />
+          <TextField
+            select
+            id="game-age-group"
+            label="Age group"
+            className={classes.textField}
+            value={gameAgeGroup}
+            onChange={this.handleGameAgeGroupChange}
+            SelectProps={{
+              MenuProps: {
+                className: classes.menu,
+              },
+            }}
+          >
+            <MenuItem value="" />
+            <MenuItem value="Any age">Any age</MenuItem>
+            <MenuItem value="9 and under">9 and under</MenuItem>
+            <MenuItem value="10 - 14">10 - 14</MenuItem>
+            <MenuItem value="15 - 19">15 - 19</MenuItem>
+            <MenuItem value="20 - 29">20 - 29</MenuItem>
+            <MenuItem value="30 - 39">30 - 39</MenuItem>
+            <MenuItem value="40 - 49">40 - 49</MenuItem>
+            <MenuItem value="50 - 59">50 - 59</MenuItem>
+            <MenuItem value="60 - 69">60 - 69</MenuItem>
+            <MenuItem value="70 and older">70 and older</MenuItem>
+          </TextField>
           <Typography component="p" className={classes.formError}>
             {gameAgeGroupError}
           </Typography>
         </FormControl>
 
         <FormControl className={classes.formControl}>
-          <InputLabel htmlFor="game-gender">Gender</InputLabel>
-          <Input id="game-gender" value={gameGender} onChange={this.handleGameGenderChange} />
+          <TextField
+            select
+            id="game-gender"
+            label="Gender"
+            className={classes.textField}
+            value={gameGender}
+            onChange={this.handleGameGenderChange}
+            SelectProps={{
+              MenuProps: {
+                className: classes.menu,
+              },
+            }}
+          >
+            <MenuItem value="" />
+            <MenuItem value="Male">Male</MenuItem>
+            <MenuItem value="Female">Female</MenuItem>
+            <MenuItem value="Co-ed">Co-ed</MenuItem>
+          </TextField>
           <Typography component="p" className={classes.formError}>
             {gameGenderError}
           </Typography>
@@ -264,35 +323,96 @@ class CreateGameForm extends React.Component {
 
         <FormControl className={classes.formControl}>
           <InputLabel htmlFor="game-city">City</InputLabel>
-          <Input id="game-city" value={gameCity} onChange={this.handleGameCityChange} />
+          <Input id="game-city" value={gameCity} onChange={this.handleGameCityChange} className={classes.cityField} />
           <Typography component="p" className={classes.formError}>
             {gameCityError}
           </Typography>
         </FormControl>
 
         <FormControl className={classes.formControl}>
-          <InputLabel htmlFor="game-state">State</InputLabel>
-          <Input id="game-state" value={gameState} onChange={this.handleGameStateChange} />
+          <TextField
+            select
+            label="State"
+            className={classes.textField}
+            value={gameState}
+            onChange={this.handleGameStateChange}
+            SelectProps={{
+              MenuProps: {
+                className: classes.menu,
+              },
+            }}
+          >
+            <MenuItem value="" />
+            <MenuItem value="AL">Alabama</MenuItem>
+            <MenuItem value="AK">Alaska</MenuItem>
+            <MenuItem value="AZ">Arizona</MenuItem>
+            <MenuItem value="CA">California</MenuItem>
+            <MenuItem value="CO">Colorado</MenuItem>
+            <MenuItem value="CT">Connecticut</MenuItem>
+            <MenuItem value="DE">Delaware</MenuItem>
+            <MenuItem value="FL">Florida</MenuItem>
+            <MenuItem value="GA">Georgia</MenuItem>
+            <MenuItem value="HI">Hawaii</MenuItem>
+            <MenuItem value="ID">Idaho</MenuItem>
+            <MenuItem value="IL">Illinois</MenuItem>
+            <MenuItem value="IN">Indiana</MenuItem>
+            <MenuItem value="IA">Iowa</MenuItem>
+            <MenuItem value="KS">Kansas</MenuItem>
+            <MenuItem value="KY">Kentucy</MenuItem>
+            <MenuItem value="LA">Louisiana</MenuItem>
+            <MenuItem value="ME">Maine</MenuItem>
+            <MenuItem value="MD">Maryland</MenuItem>
+            <MenuItem value="MA">Massachusetts</MenuItem>
+            <MenuItem value="MI">Michigan</MenuItem>
+            <MenuItem value="MN">Minnesota</MenuItem>
+            <MenuItem value="MS">Mississppi</MenuItem>
+            <MenuItem value="MO">Missouri</MenuItem>
+            <MenuItem value="MT">Montana</MenuItem>
+            <MenuItem value="NE">Nebraska</MenuItem>
+            <MenuItem value="NV">Nevada</MenuItem>
+            <MenuItem value="NH">New Hampshire</MenuItem>
+            <MenuItem value="NJ">New Jersey</MenuItem>
+            <MenuItem value="NM">New Mexico</MenuItem>
+            <MenuItem value="NY">New York</MenuItem>
+            <MenuItem value="NC">North Carolina</MenuItem>
+            <MenuItem value="ND">North Dakota</MenuItem>
+            <MenuItem value="OH">Ohio</MenuItem>
+            <MenuItem value="OK">Oklahoma</MenuItem>
+            <MenuItem value="OR">Oregon</MenuItem>
+            <MenuItem value="PA">Pennsylvania</MenuItem>
+            <MenuItem value="RI">Rhode Island</MenuItem>
+            <MenuItem value="SC">South Carolina</MenuItem>
+            <MenuItem value="SD">South Dakota</MenuItem>
+            <MenuItem value="TN">Tennessee</MenuItem>
+            <MenuItem value="TX">Texas</MenuItem>
+            <MenuItem value="UT">Utah</MenuItem>
+            <MenuItem value="VT">Vermont</MenuItem>
+            <MenuItem value="VA">Virginia</MenuItem>
+            <MenuItem value="WA">Washington</MenuItem>
+            <MenuItem value="WV">West Virginia</MenuItem>
+            <MenuItem value="WI">Wisconsin</MenuItem>
+            <MenuItem value="WY">Wyoming</MenuItem>
+          </TextField>
           <Typography component="p" className={classes.formError}>
             {gameStateError}
           </Typography>
         </FormControl>
 
         <FormControl className={classes.formControl}>
-          <InputLabel htmlFor="game-zip">Zip</InputLabel>
-          <Input id="game-zip" value={gameZip} onChange={this.handleGameZipChange} />
+          <InputLabel htmlFor="game-zip">Zip code</InputLabel>
+          <Input id="game-zip" value={gameZip} onChange={this.handleGameZipChange} className={classes.textField} />
           <Typography component="p" className={classes.formError}>
             {gameZipError}
           </Typography>
         </FormControl>
-
-        <Button variant="contained" className={classes.button} onClick={this.handleGameSubmit}>
-          Create game
-        </Button>
-
-        <Button variant="contained" className={classes.clearButton} onClick={this.handleClearFields}>
-          Clear fields
-        </Button>
+        <div>
+          <Button variant="contained" className={classes.button} onClick={this.handleGameSubmit}>
+            Create game
+          </Button>
+          <Button variant="contained" className={classes.clearButton} onClick={this.handleClearFields}>
+            Clear fields
+          </Button>
+        </div>
       </Paper>
     );
   }
