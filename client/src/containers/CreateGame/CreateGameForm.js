@@ -11,6 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 // import css
 import './CreateGame.css';
+import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
   root: {
@@ -18,6 +19,9 @@ const styles = theme => ({
     flexWrap: 'wrap',
     maxWidth: '50%',
     padding: 30,
+    borderStyle: 'solid',
+    borderWidth: '3px',
+    borderColor: '#FA8320',
   },
   formControl: {
     margin: theme.spacing.unit,
@@ -25,6 +29,11 @@ const styles = theme => ({
   instructionalText: {
     fontSize: 24,
     textAlign: 'center',
+  },
+  button: {
+    marginTop: 20,
+    backgroundColor: '#000022',
+    color: 'white',
   },
 });
 
@@ -129,6 +138,10 @@ class CreateGameForm extends React.Component {
           <InputLabel htmlFor="game-zip">Zip</InputLabel>
           <Input id="game-zip" value={this.state.gameZip} onChange={this.handleGameZipChange} />
         </FormControl>
+
+        <Button variant="contained" className={classes.button}>
+          Create game
+        </Button>
       </Paper>
     );
   }
