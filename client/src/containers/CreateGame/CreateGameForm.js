@@ -7,8 +7,6 @@ import FormControl from '@material-ui/core/FormControl';
 import Paper from '@material-ui/core/Paper';
 // Import material ui Typography component.
 import Typography from '@material-ui/core/Typography';
-// Import material ui grid layout.
-import Grid from '@material-ui/core/Grid';
 // import css
 import './CreateGame.css';
 import Button from '@material-ui/core/Button';
@@ -40,6 +38,7 @@ const styles = theme => ({
 class CreateGameForm extends React.Component {
   state = {
     gameDate: '',
+    gameDateError: '',
     gameTime: '',
     gameAgeGroup: '',
     gameGender: '',
@@ -51,7 +50,10 @@ class CreateGameForm extends React.Component {
   };
 
   handleGameDateChange = (event) => {
-    this.setState({ gameDate: event.target.value });
+    this.setState({ 
+      gameDate: event.target.value,
+      gameDateError: '',
+    });
   };
 
   handleGameTimeChange = (event) => {
@@ -86,6 +88,16 @@ class CreateGameForm extends React.Component {
     this.setState({ gameZip: event.target.value });
   };
 
+  handleGameSubmit = (event) => {
+    event.preventDefault();
+
+    if (this.state.gameDate === '') {
+      this.setState({
+        gameDateError: 'Date is required.',
+      });
+    }
+  }
+
   render() {
     const { classes } = this.props;
 
@@ -97,6 +109,7 @@ class CreateGameForm extends React.Component {
         <FormControl className={classes.formControl} fullWidth>
           <InputLabel htmlFor="game-date">Date</InputLabel>
           <Input id="game-date" value={this.state.gameDate} onChange={this.handleGameDateChange} />
+          <Typography component="p">{this.state.gameDateError}</Typography>
         </FormControl>
 
         <FormControl className={classes.formControl} fullWidth>
@@ -115,8 +128,8 @@ class CreateGameForm extends React.Component {
         </FormControl>
 
         <FormControl className={classes.formControl} fullWidth>
-            <InputLabel htmlFor="game-location">Location</InputLabel>
-            <Input id="game-location" value={this.state.gameLocation} onChange={this.handleGameLocationChange} />
+          <InputLabel htmlFor="game-location">Location</InputLabel>
+          <Input id="game-location" value={this.state.gameLocation} onChange={this.handleGameLocationChange} />
         </FormControl>
 
         <FormControl className={classes.formControl} fullWidth>
@@ -139,7 +152,7 @@ class CreateGameForm extends React.Component {
           <Input id="game-zip" value={this.state.gameZip} onChange={this.handleGameZipChange} />
         </FormControl>
 
-        <Button variant="contained" className={classes.button}>
+        <Button variant="contained" className={classes.button} onClick={this.handleGameSubmit}>
           Create game
         </Button>
       </Paper>
