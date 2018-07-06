@@ -1,5 +1,6 @@
 // Import React.
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 // Import material ui grid layout.
 import Grid from '@material-ui/core/Grid';
 // Import material ui styling.
@@ -51,5 +52,9 @@ class CreateGame extends Component {
     ];
   }
 }
+
+CreateGame.propTypes = {
+  classes: PropTypes.isRequired,
+};
 
 export default withStyles(styles)(CreateGame);

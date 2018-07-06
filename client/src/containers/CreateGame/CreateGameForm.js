@@ -33,6 +33,12 @@ const styles = theme => ({
     backgroundColor: '#000022',
     color: 'white',
   },
+  clearButton: {
+    marginTop: 20,
+    marginLeft: 20,
+    backgroundColor: '#000022',
+    color: 'white',
+  },
   formError: {
     color: 'red',
   },
@@ -177,6 +183,21 @@ class CreateGameForm extends React.Component {
     }
   }
 
+  handleClearFields = (event) => {
+    event.preventDefault();
+    this.setState({
+      gameDate: '',
+      gameTime: '',
+      gameAgeGroup: '',
+      gameGender: '',
+      gameLocation: '',
+      gameAddress: '',
+      gameCity: '',
+      gameState: '',
+      gameZip: '',
+    });
+  }
+
   render() {
     const { classes } = this.props;
     const {
@@ -268,13 +289,17 @@ class CreateGameForm extends React.Component {
         <Button variant="contained" className={classes.button} onClick={this.handleGameSubmit}>
           Create game
         </Button>
+
+        <Button variant="contained" className={classes.clearButton} onClick={this.handleClearFields}>
+          Clear fields
+        </Button>
       </Paper>
     );
   }
 }
 
 CreateGameForm.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.isRequired,
 };
 
 export default withStyles(styles)(CreateGameForm);

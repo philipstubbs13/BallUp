@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -60,5 +61,9 @@ class Login extends Component {
     ];
   }
 }
+
+Login.propTypes = {
+  classes: PropTypes.isRequired,
+};
 
 export default withStyles(styles)(Login);
