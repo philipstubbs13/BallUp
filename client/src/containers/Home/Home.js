@@ -2,14 +2,10 @@
 import React, { Component } from 'react';
 // import third-party routing library (react-router-dom)
 import { Link } from 'react-router-dom';
-// Import Top Navigation Bar Component.
-import TopAppBar from '../../components/AppBar';
 // Import material ui grid layout.
 import Grid from '@material-ui/core/Grid';
 // Import material ui styling.
 import { withStyles } from '@material-ui/core/styles';
-// Import bottom navigation
-import BottomNav from '../../components/BottomNav';
 // Import List components.
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -24,45 +20,48 @@ import EventAvailable from '@material-ui/icons/EventAvailable';
 import HelpOutline from '@material-ui/icons/HelpOutline';
 // Import Divider component to separate items in list.
 import Divider from '@material-ui/core/Divider';
+// Import Top Navigation Bar Component.
+import TopAppBar from '../../components/AppBar';
+// Import bottom navigation
+import BottomNav from '../../components/BottomNav';
 
 // Home page styling.
 const styles = theme => ({
-    root: {
-        flexGrow: 1,
-    },
-    demo: {
-      backgroundColor: '#FA8320',
-      borderStyle: 'solid',
-      borderWidth: '3px',
-      borderColor: '#000022',
-      marginTop: 20,
-    },
-    title: {
-      margin: `${theme.spacing.unit * 4}px 0 ${theme.spacing.unit * 2}px`,
-      textAlign: 'center',
-      fontSize: 30,
-      color: 'white',
-    },
-    instructionalText: {
-      color: 'white',
-      fontSize: 24,
-    },
-    listItem:{
-      backgroundColor: '#FA8320',
-      padding: 20,
-    },
-    listDivider: {
-      backgroundColor: '#000022',
-      borderWidth: '2px',
-      borderStyle: 'solid',
-      borderColor: '#0000222',
-    },
+  root: {
+    flexGrow: 1,
+  },
+  demo: {
+    backgroundColor: '#FA8320',
+    borderStyle: 'solid',
+    borderWidth: '3px',
+    borderColor: '#000022',
+    marginTop: 20,
+  },
+  title: {
+    margin: `${theme.spacing.unit * 4}px 0 ${theme.spacing.unit * 2}px`,
+    textAlign: 'center',
+    fontSize: 30,
+    color: 'white',
+  },
+  instructionalText: {
+    color: 'white',
+    fontSize: 24,
+  },
+  listItem: {
+    backgroundColor: '#FA8320',
+    padding: 20,
+  },
+  listDivider: {
+    backgroundColor: '#000022',
+    borderWidth: '2px',
+    borderStyle: 'solid',
+    borderColor: '#0000222',
+  },
 });
 
 class Home extends Component {
-  
   render() {
-    const {classes} = this.props;
+    const { classes } = this.props;
 
     return [
       <div>
@@ -70,14 +69,14 @@ class Home extends Component {
         <div className="main-content-section">
           <Grid item xs={12}>
             <Grid container className={classes.root} spacing={16} justify="center">
-                <Typography variant="title" className={classes.title}>
-                  Get up and play!
-                </Typography>
+              <Typography variant="title" className={classes.title}>
+                Get up and play!
+              </Typography>
             </Grid>
             <Grid container spacing={16} justify="center">
-                <Typography component="p" className={classes.instructionalText}>
-                  Click below to get started
-                </Typography>
+              <Typography component="p" className={classes.instructionalText}>
+                Click below to get started
+              </Typography>
             </Grid>
             <Grid container spacing={16} justify="center">
               <div className={classes.demo}>
@@ -91,7 +90,7 @@ class Home extends Component {
                       className={classes.listText}
                     />
                   </ListItem>
-                  <Divider className={classes.listDivider}/>
+                  <Divider className={classes.listDivider} />
                   <ListItem className={classes.listItem} component={Link} to="/upcominggames">
                     <ListItemIcon>
                       <EventAvailable />
@@ -101,7 +100,7 @@ class Home extends Component {
                       className={classes.listText}
                     />
                   </ListItem>
-                  <Divider className={classes.listDivider}/>
+                  <Divider className={classes.listDivider} />
                   <ListItem className={classes.listItem} component={Link} to="/nearby">
                     <ListItemIcon>
                       <LocationOnIcon />
@@ -111,7 +110,7 @@ class Home extends Component {
                       className={classes.listText}
                     />
                   </ListItem>
-                  <Divider className={classes.listDivider}/>
+                  <Divider className={classes.listDivider} />
                   <ListItem className={classes.listItem} component={Link} to="/help">
                     <ListItemIcon>
                       <HelpOutline />
@@ -126,8 +125,8 @@ class Home extends Component {
             </Grid>
           </Grid>
         </div>,
-        <BottomNav />  
-      </div>
+        <BottomNav />
+      </div>,
     ];
   }
 }
