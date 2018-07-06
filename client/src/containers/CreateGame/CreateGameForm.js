@@ -5,6 +5,12 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Paper from '@material-ui/core/Paper';
+// Import material ui Typography component.
+import Typography from '@material-ui/core/Typography';
+// Import material ui grid layout.
+import Grid from '@material-ui/core/Grid';
+// import css
+import './CreateGame.css';
 
 const styles = theme => ({
   root: {
@@ -13,9 +19,12 @@ const styles = theme => ({
     maxWidth: '50%',
     padding: 30,
   },
-
   formControl: {
     margin: theme.spacing.unit,
+  },
+  instructionalText: {
+    fontSize: 24,
+    textAlign: 'center',
   },
 });
 
@@ -73,50 +82,53 @@ class CreateGameForm extends React.Component {
 
     return (
       <Paper className={classes.root}>
-            <FormControl className={classes.formControl} fullWidth>
-              <InputLabel htmlFor="game-date">Date</InputLabel>
-              <Input id="game-date" value={this.state.gameDate} onChange={this.handleGameDateChange} />
-            </FormControl>
+        <Typography component="p" className="instructionalText">
+            Fill out the form to set up a game near you
+        </Typography>
+        <FormControl className={classes.formControl} fullWidth>
+          <InputLabel htmlFor="game-date">Date</InputLabel>
+          <Input id="game-date" value={this.state.gameDate} onChange={this.handleGameDateChange} />
+        </FormControl>
 
-            <FormControl className={classes.formControl} fullWidth>
-              <InputLabel htmlFor="game-time">Time</InputLabel>
-              <Input id="game-time" value={this.state.gameTime} onChange={this.handleGameTimeChange} />
-            </FormControl>
+        <FormControl className={classes.formControl} fullWidth>
+          <InputLabel htmlFor="game-time">Time</InputLabel>
+          <Input id="game-time" value={this.state.gameTime} onChange={this.handleGameTimeChange} />
+        </FormControl>
 
-            <FormControl className={classes.formControl}>
-              <InputLabel htmlFor="game-age-group">Age group</InputLabel>
-              <Input id="game-age-group" value={this.state.gameAgeGroup} onChange={this.handleGameAgeGroupChange} />
-            </FormControl>
+        <FormControl className={classes.formControl}>
+          <InputLabel htmlFor="game-age-group">Age group</InputLabel>
+          <Input id="game-age-group" value={this.state.gameAgeGroup} onChange={this.handleGameAgeGroupChange} />
+        </FormControl>
 
-            <FormControl className={classes.formControl}>
-              <InputLabel htmlFor="game-gender">Gender</InputLabel>
-              <Input id="game-gender" value={this.state.gameGender} onChange={this.handleGameGenderChange} />
-            </FormControl>
+        <FormControl className={classes.formControl}>
+          <InputLabel htmlFor="game-gender">Gender</InputLabel>
+          <Input id="game-gender" value={this.state.gameGender} onChange={this.handleGameGenderChange} />
+        </FormControl>
 
-            <FormControl className={classes.formControl} fullWidth>
-              <InputLabel htmlFor="game-location">Location</InputLabel>
-              <Input id="game-location" value={this.state.gameLocation} onChange={this.handleGameLocationChange} />
-            </FormControl>
+        <FormControl className={classes.formControl} fullWidth>
+            <InputLabel htmlFor="game-location">Location</InputLabel>
+            <Input id="game-location" value={this.state.gameLocation} onChange={this.handleGameLocationChange} />
+        </FormControl>
 
-            <FormControl className={classes.formControl} fullWidth>
-              <InputLabel htmlFor="game-address">Address line 1</InputLabel>
-              <Input id="game-address" value={this.state.gameAddress} onChange={this.handleGameAddressChange} />
-            </FormControl>
+        <FormControl className={classes.formControl} fullWidth>
+          <InputLabel htmlFor="game-address">Address line 1</InputLabel>
+          <Input id="game-address" value={this.state.gameAddress} onChange={this.handleGameAddressChange} />
+        </FormControl>
 
-            <FormControl className={classes.formControl}>
-              <InputLabel htmlFor="game-city">City</InputLabel>
-              <Input id="game-city" value={this.state.gameCity} onChange={this.handleGameCityChange} />
-            </FormControl>
+        <FormControl className={classes.formControl}>
+          <InputLabel htmlFor="game-city">City</InputLabel>
+          <Input id="game-city" value={this.state.gameCity} onChange={this.handleGameCityChange} />
+        </FormControl>
 
-            <FormControl className={classes.formControl}>
-              <InputLabel htmlFor="game-state">State</InputLabel>
-              <Input id="game-state" value={this.state.gameState} onChange={this.handleGameStateChange} />
-            </FormControl>
+        <FormControl className={classes.formControl}>
+          <InputLabel htmlFor="game-state">State</InputLabel>
+          <Input id="game-state" value={this.state.gameState} onChange={this.handleGameStateChange} />
+        </FormControl>
 
-            <FormControl className={classes.formControl}>
-              <InputLabel htmlFor="game-zip">Zip</InputLabel>
-              <Input id="game-zip" value={this.state.gameZip} onChange={this.handleGameZipChange} />
-            </FormControl>
+        <FormControl className={classes.formControl}>
+          <InputLabel htmlFor="game-zip">Zip</InputLabel>
+          <Input id="game-zip" value={this.state.gameZip} onChange={this.handleGameZipChange} />
+        </FormControl>
       </Paper>
     );
   }

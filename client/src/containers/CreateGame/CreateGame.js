@@ -21,12 +21,7 @@ const styles = theme => ({
   title: {
     margin: `${theme.spacing.unit * 4}px 0 ${theme.spacing.unit * 2}px`,
     textAlign: 'center',
-    fontSize: 30,
-    color: 'white',
-  },
-  instructionalText: {
-    color: 'white',
-    fontSize: 24,
+    fontSize: 50,
   },
 });
 
@@ -37,22 +32,15 @@ class CreateGame extends Component {
     return [
       <div>
         <TopAppBar />
+        <Grid item xs={12}>
           <Grid container className={classes.root} spacing={16} justify="center">
-            <Grid item xs={12}>
-              <Typography variant="title" className={classes.title}>
-                Ready to play?
-              </Typography>
-            </Grid>
+            <Typography variant="title" className={classes.title}>
+              <b>Ready to play?</b>
+            </Typography>
           </Grid>
-          <Grid container className={classes.root} spacing={16} justify="center">
-            <Grid item x={12}>
-              <Typography component="p" className={classes.instructionalText}>
-                Fill out the form below to set up a game near you.
-              </Typography>
-            </Grid>
-          </Grid>
-          <div className="main-content-section">
-            <Grid item xs={12}>
+        </Grid>
+        <div className="main-content-section">
+          <Grid item xs={12}>
             <Grid container className={classes.root} spacing={16} justify="center">
               <CreateGameForm />
             </Grid>
