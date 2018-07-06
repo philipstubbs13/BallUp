@@ -125,48 +125,52 @@ class CreateGameForm extends React.Component {
 
   handleGameSubmit = (event) => {
     event.preventDefault();
+    const {
+      gameDate, gameTime, gameAgeGroup, gameGender,
+      gameLocation, gameAddress, gameCity, gameState, gameZip,
+    } = this.state;
 
-    if (this.state.gameDate === '') {
+    if (gameDate === '') {
       this.setState({
         gameDateError: 'Date is required.',
       });
     }
-    if (this.state.gameTime === '') {
+    if (gameTime === '') {
       this.setState({
         gameTimeError: 'Time is required.',
       });
     }
-    if (this.state.gameAgeGroup === '') {
+    if (gameAgeGroup === '') {
       this.setState({
         gameAgeGroupError: 'Age group is required.',
       });
     }
-    if (this.state.gameGender === '') {
+    if (gameGender === '') {
       this.setState({
         gameGenderError: 'Gender is required.',
       });
     }
-    if (this.state.gameLocation === '') {
+    if (gameLocation === '') {
       this.setState({
         gameLocationError: 'Location is required.',
       });
     }
-    if (this.state.gameAddress === '') {
+    if (gameAddress === '') {
       this.setState({
         gameAddressError: 'Address is required.',
       });
     }
-    if (this.state.gameCity === '') {
+    if (gameCity === '') {
       this.setState({
         gameCityError: 'City is required.',
       });
     }
-    if (this.state.gameState === '') {
+    if (gameState === '') {
       this.setState({
         gameStateError: 'State is required.',
       });
-    } 
-    if (this.state.gameZip === '') {
+    }
+    if (gameZip === '') {
       this.setState({
         gameZipError: 'Zip is required.',
       });
@@ -175,6 +179,14 @@ class CreateGameForm extends React.Component {
 
   render() {
     const { classes } = this.props;
+    const {
+      gameDateError, gameDate, gameTimeError, gameTime,
+      gameAgeGroupError, gameAgeGroup, gameGenderError,
+      gameGender, gameLocationError, gameLocation,
+      gameAddressError, gameAddress, gameCityError,
+      gameCity, gameStateError, gameState,
+      gameZipError, gameZip,
+    } = this.state;
 
     return (
       <Paper className={classes.root}>
@@ -183,56 +195,74 @@ class CreateGameForm extends React.Component {
         </Typography>
         <FormControl className={classes.formControl} fullWidth>
           <InputLabel htmlFor="game-date">Date</InputLabel>
-          <Input id="game-date" value={this.state.gameDate} onChange={this.handleGameDateChange} />
-          <Typography component="p" className={classes.formError}>{this.state.gameDateError}</Typography>
+          <Input id="game-date" value={gameDate} onChange={this.handleGameDateChange} />
+          <Typography component="p" className={classes.formError}>
+            {gameDateError}
+          </Typography>
         </FormControl>
 
         <FormControl className={classes.formControl} fullWidth>
           <InputLabel htmlFor="game-time">Time</InputLabel>
-          <Input id="game-time" value={this.state.gameTime} onChange={this.handleGameTimeChange} />
-          <Typography component="p" className={classes.formError}>{this.state.gameTimeError}</Typography>
+          <Input id="game-time" value={gameTime} onChange={this.handleGameTimeChange} />
+          <Typography component="p" className={classes.formError}>
+            {gameTimeError}
+          </Typography>
         </FormControl>
 
         <FormControl className={classes.formControl}>
           <InputLabel htmlFor="game-age-group">Age group</InputLabel>
-          <Input id="game-age-group" value={this.state.gameAgeGroup} onChange={this.handleGameAgeGroupChange} />
-          <Typography component="p" className={classes.formError}>{this.state.gameAgeGroupError}</Typography>
+          <Input id="game-age-group" value={gameAgeGroup} onChange={this.handleGameAgeGroupChange} />
+          <Typography component="p" className={classes.formError}>
+            {gameAgeGroupError}
+          </Typography>
         </FormControl>
 
         <FormControl className={classes.formControl}>
           <InputLabel htmlFor="game-gender">Gender</InputLabel>
-          <Input id="game-gender" value={this.state.gameGender} onChange={this.handleGameGenderChange} />
-          <Typography component="p" className={classes.formError}>{this.state.gameGenderError}</Typography>
+          <Input id="game-gender" value={gameGender} onChange={this.handleGameGenderChange} />
+          <Typography component="p" className={classes.formError}>
+            {gameGenderError}
+          </Typography>
         </FormControl>
 
         <FormControl className={classes.formControl} fullWidth>
           <InputLabel htmlFor="game-location">Location</InputLabel>
-          <Input id="game-location" value={this.state.gameLocation} onChange={this.handleGameLocationChange} />
-          <Typography component="p" className={classes.formError}>{this.state.gameLocationError}</Typography>
+          <Input id="game-location" value={gameLocation} onChange={this.handleGameLocationChange} />
+          <Typography component="p" className={classes.formError}>
+            {gameLocationError}
+          </Typography>
         </FormControl>
 
         <FormControl className={classes.formControl} fullWidth>
           <InputLabel htmlFor="game-address">Address line 1</InputLabel>
-          <Input id="game-address" value={this.state.gameAddress} onChange={this.handleGameAddressChange} />
-          <Typography component="p" className={classes.formError}>{this.state.gameAddressError}</Typography>
+          <Input id="game-address" value={gameAddress} onChange={this.handleGameAddressChange} />
+          <Typography component="p" className={classes.formError}>
+            {gameAddressError}
+          </Typography>
         </FormControl>
 
         <FormControl className={classes.formControl}>
           <InputLabel htmlFor="game-city">City</InputLabel>
-          <Input id="game-city" value={this.state.gameCity} onChange={this.handleGameCityChange} />
-          <Typography component="p" className={classes.formError}>{this.state.gameCityError}</Typography>
+          <Input id="game-city" value={gameCity} onChange={this.handleGameCityChange} />
+          <Typography component="p" className={classes.formError}>
+            {gameCityError}
+          </Typography>
         </FormControl>
 
         <FormControl className={classes.formControl}>
           <InputLabel htmlFor="game-state">State</InputLabel>
-          <Input id="game-state" value={this.state.gameState} onChange={this.handleGameStateChange} />
-          <Typography component="p" className={classes.formError}>{this.state.gameStateError}</Typography>
+          <Input id="game-state" value={gameState} onChange={this.handleGameStateChange} />
+          <Typography component="p" className={classes.formError}>
+            {gameStateError}
+          </Typography>
         </FormControl>
 
         <FormControl className={classes.formControl}>
           <InputLabel htmlFor="game-zip">Zip</InputLabel>
-          <Input id="game-zip" value={this.state.gameZip} onChange={this.handleGameZipChange} />
-          <Typography component="p" className={classes.formError}>{this.state.gameZipError}</Typography>
+          <Input id="game-zip" value={gameZip} onChange={this.handleGameZipChange} />
+          <Typography component="p" className={classes.formError}>
+            {gameZipError}
+          </Typography>
         </FormControl>
 
         <Button variant="contained" className={classes.button} onClick={this.handleGameSubmit}>
