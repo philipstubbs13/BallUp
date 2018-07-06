@@ -65,7 +65,8 @@ class Home extends Component {
 
     return [
       <div>
-        <TopAppBar />,
+        <TopAppBar />
+        ,
         <div className="main-content-section">
           <Grid item xs={12}>
             <Grid container className={classes.root} spacing={16} justify="center">
@@ -124,7 +125,8 @@ class Home extends Component {
               </div>
             </Grid>
           </Grid>
-        </div>,
+        </div>
+        ,
         <BottomNav />
       </div>,
     ];

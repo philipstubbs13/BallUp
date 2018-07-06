@@ -26,7 +26,7 @@ const styles = {
   },
   footerContent: {
     color: 'white',
-  }
+  },
 };
 
 function Footer(props) {
@@ -43,7 +43,8 @@ function Footer(props) {
             Copyright &copy; 2018 Phil Stubbs
           </Typography>
           <Typography component="p" className={classes.footerContent}>
-            You don't stop playing because you get old.<br />
+            You don't stop playing because you get old.
+            <br />
             You get old because you stop playing.
           </Typography>
         </CardContent>

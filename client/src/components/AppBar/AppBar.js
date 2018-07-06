@@ -43,7 +43,9 @@ function TopAppBar(props) {
           <Typography variant="title" color="inherit" className={classes.welcomeUser}>
             Welcome, Jax
           </Typography>
-          <Button color="inherit">Logout</Button>
+          <Button color="inherit">
+            Logout
+          </Button>
         </Toolbar>
       </AppBar>
     </div>
