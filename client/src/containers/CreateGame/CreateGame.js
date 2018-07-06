@@ -37,19 +37,23 @@ class CreateGame extends Component {
     return [
       <div>
         <TopAppBar />
-        <div className="main-content-section">
-          <Grid item xs={12}>
-            <Grid container className={classes.root} spacing={16} justify="center">
+          <Grid container className={classes.root} spacing={16} justify="center">
+            <Grid item xs={12}>
               <Typography variant="title" className={classes.title}>
                 Ready to play?
               </Typography>
             </Grid>
-            <Grid container spacing={16} justify="center">
+          </Grid>
+          <Grid container className={classes.root} spacing={16} justify="center">
+            <Grid item x={12}>
               <Typography component="p" className={classes.instructionalText}>
                 Fill out the form below to set up a game near you.
               </Typography>
             </Grid>
-            <Grid container spacing={16} justify="center">
+          </Grid>
+          <div className="main-content-section">
+            <Grid item xs={12}>
+            <Grid container className={classes.root} spacing={16} justify="center">
               <CreateGameForm />
             </Grid>
           </Grid>
