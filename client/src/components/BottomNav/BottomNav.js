@@ -15,6 +15,8 @@ import AddCircle from '@material-ui/icons/AddCircle';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import EventAvailable from '@material-ui/icons/EventAvailable';
 import HelpOutline from '@material-ui/icons/HelpOutline';
+// import Hidden component from material ui to hide bottom navigation on xs screens and down.
+import Hidden from '@material-ui/core/Hidden';
 
 // Define styling for bottom navigation.
 const styles = {
@@ -42,13 +44,15 @@ class BottomNav extends React.Component {
     const { value } = this.state;
 
     return (
-      <BottomNavigation value={value} onChange={this.handleChange} className={classes.root} justify="center">
-        <BottomNavigationAction label="Home" value="home" icon={<Home />} className={classes.navIcon} component={Link} to="/home" />
-        <BottomNavigationAction label="Create game" value="create_game" icon={<AddCircle />} className={classes.navIcon} component={Link} to="/newgame" />
-        <BottomNavigationAction label="Upcoming games" value="games" icon={<EventAvailable />} className={classes.navIcon} component={Link} to="/upcominggames" />
-        <BottomNavigationAction label="Nearby" value="nearby" icon={<LocationOnIcon />} className={classes.navIcon} component={Link} to="/nearby" />
-        <BottomNavigationAction label="Help" value="help" icon={<HelpOutline />} className={classes.navIcon} component={Link} to="/help" />
-      </BottomNavigation>
+      <Hidden xsDown>
+        <BottomNavigation value={value} onChange={this.handleChange} className={classes.root} justify="center">
+          <BottomNavigationAction label="Home" value="home" icon={<Home />} className={classes.navIcon} component={Link} to="/home" />
+          <BottomNavigationAction label="Create game" value="create_game" icon={<AddCircle />} className={classes.navIcon} component={Link} to="/newgame" />
+          <BottomNavigationAction label="Upcoming games" value="games" icon={<EventAvailable />} className={classes.navIcon} component={Link} to="/upcominggames" />
+          <BottomNavigationAction label="Nearby" value="nearby" icon={<LocationOnIcon />} className={classes.navIcon} component={Link} to="/nearby" />
+          <BottomNavigationAction label="Help" value="help" icon={<HelpOutline />} className={classes.navIcon} component={Link} to="/help" />
+        </BottomNavigation>
+      </Hidden>
     );
   }
 }
