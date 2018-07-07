@@ -22,7 +22,8 @@ import Home from '@material-ui/icons/Home';
 import AddCircle from '@material-ui/icons/AddCircle';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import EventAvailable from '@material-ui/icons/EventAvailable';
-import HelpOutline from '@material-ui/icons/HelpOutline';
+// import Online Help Dialog
+import HelpDialog from '../../containers/HelpDialog';
 
 // styling for hamburger menu
 const styles = ({
@@ -70,9 +71,9 @@ class HamburgerMenu extends React.Component {
             <Paper className={classes.paper}>
               <MenuItem onClick={this.handleClose} component={Link} to="/home"><Home /> Home</MenuItem>
               <MenuItem onClick={this.handleClose} component={Link} to="/newgame"><AddCircle /> Create game</MenuItem>
-              <MenuItem onClick={this.handleClose} component={Link} to="/upcominggames"><LocationOnIcon /> Upcoming games</MenuItem>
-              <MenuItem onClick={this.handleClose} component={Link} to="/nearby"><EventAvailable /> Search nearby</MenuItem>
-              <MenuItem onClick={this.handleClose} component={Link} to="/help"><HelpOutline /> Help</MenuItem>
+              <MenuItem onClick={this.handleClose} component={Link} to="/upcominggames"><EventAvailable /> Upcoming games</MenuItem>
+              <MenuItem onClick={this.handleClose} component={Link} to="/nearby"><LocationOnIcon /> Search nearby</MenuItem>
+              <HelpDialog />
             </Paper>
           </ClickAwayListener>
         ) : null}
