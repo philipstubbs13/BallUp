@@ -28,7 +28,7 @@ const styles = theme => ({
     padding: 30,
     borderStyle: 'solid',
     borderWidth: '3px',
-    borderColor: '#FA8320',
+    borderColor: '#000022',
   },
   formControl: {
     margin: theme.spacing.unit,
@@ -40,13 +40,13 @@ const styles = theme => ({
   button: {
     marginTop: 20,
     backgroundColor: '#000022',
-    color: 'white',
+    color: '#FA8320',
   },
   clearButton: {
     marginTop: 20,
     marginLeft: 20,
     backgroundColor: '#000022',
-    color: 'white',
+    color: '#FA8320',
   },
   formError: {
     color: 'red',

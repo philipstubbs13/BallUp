@@ -1,15 +1,25 @@
+// import React
 import React from 'react';
+// import third party linking library to link pages.
+import { Link } from 'react-router-dom';
+// import property types
 import PropTypes from 'prop-types';
+// import styling from material ui library
 import { withStyles } from '@material-ui/core/styles';
+// import material ui AppBar component
 import AppBar from '@material-ui/core/AppBar';
+// import material ui Toolbar component
 import Toolbar from '@material-ui/core/Toolbar';
+// import material ui Typography component
 import Typography from '@material-ui/core/Typography';
+// import material ui Button component
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+// import hamburger menu component
+import HamburgerMenu from './HamburgerMenu';
 // import css for app bar
 import './AppBar.css';
 
+// styling for app bar component.
 const styles = {
   root: {
     flexGrow: 1,
@@ -29,15 +39,14 @@ const styles = {
 };
 
 function TopAppBar(props) {
+  // ES6 destructuring
   const { classes } = props;
   return (
     <div className={classes.root}>
       <AppBar position="static" className="appBar">
         <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="title" color="inherit" className={classes.flex}>
+          <HamburgerMenu />
+          <Typography variant="title" color="inherit" className={classes.flex} component={Link} to="/home">
             BallUp
           </Typography>
           <Typography variant="title" color="inherit" className={classes.welcomeUser}>
@@ -53,7 +62,8 @@ function TopAppBar(props) {
 }
 
 TopAppBar.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.isRequired,
 };
 
+// Export the TopAppBar component from this file.
 export default withStyles(styles)(TopAppBar);

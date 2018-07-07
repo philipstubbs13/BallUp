@@ -37,6 +37,7 @@ class BottomNav extends React.Component {
   };
 
   render() {
+    // ES6 destructuring.
     const { classes } = this.props;
     const { value } = this.state;
 
@@ -52,8 +53,10 @@ class BottomNav extends React.Component {
   }
 }
 
+// property types
 BottomNav.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.isRequired,
 };
 
+// export bottom navigation component.
 export default withStyles(styles)(BottomNav);
