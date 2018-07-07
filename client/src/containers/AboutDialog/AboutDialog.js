@@ -18,34 +18,35 @@ import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import MenuItem from '@material-ui/core/MenuItem';
-import HelpOutline from '@material-ui/icons/HelpOutline';
+import InfoOutline from '@material-ui/icons/InfoOutline';
 
 // material ui styling.
 const styles = {
   appBar: {
     position: 'relative',
+    backgroundColor: '#000022',
   },
   flex: {
     flex: 1,
   },
 };
 
-// When user clicks Help from the hamburger menu, slide the help dialog upwards (from top to bottom)
+// When user clicks About from the hamburger menu, slide the about dialog upwards (from bottom to top)
 function Transition(props) {
   return <Slide direction="up" {...props} />;
 }
 
-class HelpDialog extends React.Component {
+class AboutDialog extends React.Component {
   state = {
     open: false,
   };
 
-  // When user clicks Help from the menu, set open to true.
+  // When user clicks About from the menu, set open to true.
   handleClickOpen = () => {
     this.setState({ open: true });
   };
 
-  // When user wants to close the Help dialog, set open to false.
+  // When user wants to close the About dialog, set open to false.
   handleClose = () => {
     this.setState({ open: false });
   };
@@ -56,9 +57,8 @@ class HelpDialog extends React.Component {
     const { open } = this.state;
     return (
       <div>
-        <MenuItem onClick={this.handleClickOpen}><HelpOutline /> Help</MenuItem>
+        <MenuItem onClick={this.handleClickOpen}><InfoOutline /> About</MenuItem>
         <Dialog
-          fullScreen
           open={open}
           onClose={this.handleClose}
           TransitionComponent={Transition}
@@ -69,7 +69,7 @@ class HelpDialog extends React.Component {
                 <CloseIcon />
               </IconButton>
               <Typography variant="title" color="inherit" className={classes.flex}>
-                Help
+                About BallUp
               </Typography>
               <Button color="inherit" onClick={this.handleClose}>
                 Close
@@ -77,12 +77,20 @@ class HelpDialog extends React.Component {
             </Toolbar>
           </AppBar>
           <List>
-            <ListItem button>
-              <ListItemText primary="Phone ringtone" secondary="Titania" />
+            <ListItem>
+              <ListItemText primary="App name" secondary="BallUp Copyright &copy; 2018" />
             </ListItem>
             <Divider />
-            <ListItem button>
-              <ListItemText primary="Default notification ringtone" secondary="Tethys" />
+            <ListItem>
+              <ListItemText primary="App version" secondary="1.0" />
+            </ListItem>
+            <Divider />
+            <ListItem>
+              <ListItemText primary="Created by" secondary="Phil Stubbs" />
+            </ListItem>
+            <Divider />
+            <ListItem>
+              <ListItemText primary="App description" secondary="BallUp was created to help connect basketball players and simplify the process of finding and organizing pickup basketball games." />
             </ListItem>
           </List>
         </Dialog>
@@ -91,8 +99,8 @@ class HelpDialog extends React.Component {
   }
 }
 
-// HelpDialog.propTypes = {
+// AboutDialog.propTypes = {
 //   classes: PropTypes.object.isRequired,
 // };
 
-export default withStyles(styles)(HelpDialog);
+export default withStyles(styles)(AboutDialog);
