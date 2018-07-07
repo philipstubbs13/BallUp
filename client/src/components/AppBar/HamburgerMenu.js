@@ -3,7 +3,7 @@ import React from 'react';
 // Import third party linking library to add links to the different pages in hamburger menu.
 import { Link } from 'react-router-dom';
 // import property types
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 // import styling from material ui.
 import { withStyles } from '@material-ui/core/styles';
 // import ClickAwayListener component from material ui.
@@ -82,9 +82,9 @@ class HamburgerMenu extends React.Component {
 }
 
 // Property types
-HamburgerMenu.propTypes = {
-  classes: PropTypes.isRequired,
-};
+// HamburgerMenu.propTypes = {
+//   classes: PropTypes.func.isRequired,
+// };
 
 // export the hamburger menu component.
 export default withStyles(styles)(HamburgerMenu);

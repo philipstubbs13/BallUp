@@ -2,8 +2,8 @@
 import React from 'react';
 // import third party linking library to link pages.
 import { Link } from 'react-router-dom';
-// import property types
-import PropTypes from 'prop-types';
+// // import property types
+// import PropTypes from 'prop-types';
 // import styling from material ui library
 import { withStyles } from '@material-ui/core/styles';
 // import material ui AppBar component
@@ -61,9 +61,9 @@ function TopAppBar(props) {
   );
 }
 
-TopAppBar.propTypes = {
-  classes: PropTypes.isRequired,
-};
+// TopAppBar.propTypes = {
+//   classes: PropTypes.isRequired,
+// };
 
 // Export the TopAppBar component from this file.
 export default withStyles(styles)(TopAppBar);

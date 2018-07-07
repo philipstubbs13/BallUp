@@ -1,7 +1,7 @@
 // import React
 import React from 'react';
 // import material ui property types
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 // import material ui styling
 import { withStyles } from '@material-ui/core/styles';
 // import material ui form control component
@@ -315,7 +315,6 @@ class CreateGameForm extends React.Component {
             id="game-date"
             label="Date"
             type="date"
-            defaultValue="2018-07-04"
             value={gameDate}
             onChange={this.handleGameDateChange}
             InputLabelProps={{
@@ -333,7 +332,6 @@ class CreateGameForm extends React.Component {
             id="game-time"
             label="Time"
             type="time"
-            defaultValue="07:30"
             className={classes.dateTimePickers}
             InputLabelProps={{
               shrink: true,
@@ -571,9 +569,9 @@ class CreateGameForm extends React.Component {
   }
 }
 
-CreateGameForm.propTypes = {
-  classes: PropTypes.isRequired,
-};
+// CreateGameForm.propTypes = {
+//   classes: PropTypes.func.isRequired,
+// };
 
 // export CreateGameForm component and style.
 export default withStyles(styles)(CreateGameForm);

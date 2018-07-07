@@ -3,7 +3,7 @@ import React from 'react';
 // import third-party routing library (react-router-dom)
 import { Link } from 'react-router-dom';
 // Import property types
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 // Import style from material ui.
 import { withStyles } from '@material-ui/core/styles';
 // Import material ui bottom navigation components.
@@ -58,9 +58,9 @@ class BottomNav extends React.Component {
 }
 
 // property types
-BottomNav.propTypes = {
-  classes: PropTypes.isRequired,
-};
+// BottomNav.propTypes = {
+//   classes: PropTypes.isRequired,
+// };
 
 // export bottom navigation component.
 export default withStyles(styles)(BottomNav);
