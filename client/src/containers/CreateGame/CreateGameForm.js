@@ -1,16 +1,25 @@
+// import React
 import React from 'react';
+// import material ui property types
 import PropTypes from 'prop-types';
+// import material ui styling
 import { withStyles } from '@material-ui/core/styles';
+// import material ui form control component
 import FormControl from '@material-ui/core/FormControl';
+// import material ui paper component
 import Paper from '@material-ui/core/Paper';
+// import material ui menu component for drop down menus.
 import MenuItem from '@material-ui/core/MenuItem';
+// import material ui text field component.
 import TextField from '@material-ui/core/TextField';
 // Import material ui Typography component.
 import Typography from '@material-ui/core/Typography';
-// import css
+// import css file.
 import './CreateGame.css';
+// import material ui button component.
 import Button from '@material-ui/core/Button';
 
+// styling of create game form
 const styles = theme => ({
   root: {
     display: 'flex',
@@ -80,6 +89,9 @@ class CreateGameForm extends React.Component {
     gameInfoError: '',
   };
 
+  // Keeping track of what user enters for date field so that input can be grabbed later.
+  // If form validation error is showing on the page,
+  // remove the error when the user starts typing in the field.
   handleGameDateChange = (event) => {
     this.setState({
       gameDate: event.target.value,
@@ -87,6 +99,9 @@ class CreateGameForm extends React.Component {
     });
   };
 
+  // Keeping track of what user enters for time field so that input can be grabbed later.
+  // If form validation error is showing on the page,
+  // remove the error when the user starts typing in the field.
   handleGameTimeChange = (event) => {
     this.setState({
       gameTime: event.target.value,
@@ -94,6 +109,9 @@ class CreateGameForm extends React.Component {
     });
   };
 
+  // Keeping track of what user selects for age group field so that input can be grabbed later.
+  // If form validation error is showing on the page,
+  // remove the error when the user starts typing in the field.
   handleGameAgeGroupChange = (event) => {
     this.setState({
       gameAgeGroup: event.target.value,
@@ -101,6 +119,9 @@ class CreateGameForm extends React.Component {
     });
   };
 
+  // Keeping track of what user selects for gender field so that input can be grabbed later.
+  // If form validation error is showing on the page,
+  // remove the error when the user starts typing in the field.
   handleGameGenderChange = (event) => {
     this.setState({
       gameGender: event.target.value,
@@ -108,6 +129,9 @@ class CreateGameForm extends React.Component {
     });
   };
 
+  // Keeping track of what user enters for location field so that input can be grabbed later.
+  // If form validation error is showing on the page,
+  // remove the error when the user starts typing in the field.
   handleGameLocationChange = (event) => {
     this.setState({
       gameLocation: event.target.value,
@@ -115,6 +139,9 @@ class CreateGameForm extends React.Component {
     });
   };
 
+  // Keeping track of what user enters for address field so that input can be grabbed later.
+  // If form validation error is showing on the page,
+  // remove the error when the user starts typing in the field.
   handleGameAddressChange = (event) => {
     this.setState({
       gameAddress: event.target.value,
@@ -122,6 +149,9 @@ class CreateGameForm extends React.Component {
     });
   };
 
+  // Keeping track of what user selects for city field so that input can be grabbed later.
+  // If form validation error is showing on the page,
+  // remove the error when the user starts typing in the field.
   handleGameCityChange = (event) => {
     this.setState({
       gameCity: event.target.value,
@@ -129,6 +159,9 @@ class CreateGameForm extends React.Component {
     });
   };
 
+  // Keeping track of what user selects for state field so that input can be grabbed later.
+  // If form validation error is showing on the page,
+  // remove the error when the user starts typing in the field.
   handleGameStateChange = (event) => {
     this.setState({
       gameState: event.target.value,
@@ -136,6 +169,9 @@ class CreateGameForm extends React.Component {
     });
   };
 
+  // Keeping track of what user enters for zip code field so that input can be grabbed later.
+  // If form validation error is showing on the page,
+  // remove the error when the user starts typing in the field.
   handleGameZipChange = (event) => {
     this.setState({
       gameZip: event.target.value,
@@ -143,6 +179,10 @@ class CreateGameForm extends React.Component {
     });
   };
 
+  // Keeping track of what user enters for additional information field
+  // so that input can be grabbed later.
+  // If form validation error is showing on the page,
+  // remove the error when the user starts typing in the field.
   handleGameInfoChange = (event) => {
     this.setState({
       gameInfo: event.target.value,
@@ -150,58 +190,72 @@ class CreateGameForm extends React.Component {
     });
   };
 
+  // On click handler for when user trys to submit form to create a game.
   handleGameSubmit = (event) => {
+    // Prevent the form from submitting itself.
     event.preventDefault();
+    // ES6 Destructuring
     const {
       gameDate, gameTime, gameAgeGroup, gameGender,
       gameLocation, gameAddress, gameCity, gameState, gameZip, gameInfo,
     } = this.state;
 
+    // if date field is blank or equal to mm/dd/yyyy, show validation error that date is required.
     if (gameDate === '' || gameDate === 'mm/dd/yyyy') {
       this.setState({
         gameDateError: 'Date is required.',
       });
     }
+    // if time field is blank, show validation error that time is required.
     if (gameTime === '') {
       this.setState({
         gameTimeError: 'Time is required.',
       });
     }
+    // if age group field is blank, show validation error that age group field is required.
     if (gameAgeGroup === '') {
       this.setState({
         gameAgeGroupError: 'Age group is required.',
       });
     }
+    // if gender field is blank, show validation error that gender field is required.
     if (gameGender === '') {
       this.setState({
         gameGenderError: 'Gender is required.',
       });
     }
+    // if location field is blank, show validation error that location is required.
     if (gameLocation === '') {
       this.setState({
         gameLocationError: 'Location is required.',
       });
     }
+    // If address field is blank, show validation error that address is required.
     if (gameAddress === '') {
       this.setState({
         gameAddressError: 'Address is required.',
       });
     }
+    // if city field is blank, show validation error that city is required.
     if (gameCity === '') {
       this.setState({
         gameCityError: 'City is required.',
       });
     }
+    // if state field is blank, show validation error that state is required.
     if (gameState === '') {
       this.setState({
         gameStateError: 'State is required.',
       });
     }
+    // if zip code field is blank, show validation error that zip code field is required.
     if (gameZip === '') {
       this.setState({
-        gameZipError: 'Zip is required.',
+        gameZipError: 'Zip code is required.',
       });
     }
+    // if the additional info field is blank,
+    // show validation error that additional info field is required.
     if (gameInfo === '') {
       this.setState({
         gameInfoError: 'Enter any additional information about the game or type N/A in this field.',
@@ -209,8 +263,11 @@ class CreateGameForm extends React.Component {
     }
   }
 
+  // on click handler to clear values from all fields when user clicks clear fields button.
   handleClearFields = (event) => {
+    // prevent form from submitting itself.
     event.preventDefault();
+    // Set form fields and form field errors back to their default states (empty string).
     this.setState({
       gameDate: '',
       gameDateError: '',
@@ -236,6 +293,7 @@ class CreateGameForm extends React.Component {
   }
 
   render() {
+    // ES6 destructuring
     const { classes } = this.props;
     const {
       gameDateError, gameDate, gameTimeError, gameTime,
@@ -517,4 +575,5 @@ CreateGameForm.propTypes = {
   classes: PropTypes.isRequired,
 };
 
+// export CreateGameForm component and style.
 export default withStyles(styles)(CreateGameForm);
