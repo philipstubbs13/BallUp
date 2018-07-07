@@ -53,6 +53,9 @@ const styles = theme => ({
   cityField: {
     maxWidth: 175,
   },
+  dateTimePickers: {
+    width: 250,
+  },
 });
 
 class CreateGameForm extends React.Component {
@@ -75,6 +78,8 @@ class CreateGameForm extends React.Component {
     gameStateError: '',
     gameZip: '',
     gameZipError: '',
+    gameInfo: '',
+    gameInfoError: '',
   };
 
   handleGameDateChange = (event) => {
@@ -140,14 +145,21 @@ class CreateGameForm extends React.Component {
     });
   };
 
+  handleGameInfoChange = (event) => {
+    this.setState({
+      gameInfo: event.target.value,
+      gameInfoError: '',
+    });
+  };
+
   handleGameSubmit = (event) => {
     event.preventDefault();
     const {
       gameDate, gameTime, gameAgeGroup, gameGender,
-      gameLocation, gameAddress, gameCity, gameState, gameZip,
+      gameLocation, gameAddress, gameCity, gameState, gameZip, gameInfo,
     } = this.state;
 
-    if (gameDate === '') {
+    if (gameDate === '' || gameDate === 'mm/dd/yyyy') {
       this.setState({
         gameDateError: 'Date is required.',
       });
@@ -192,6 +204,11 @@ class CreateGameForm extends React.Component {
         gameZipError: 'Zip is required.',
       });
     }
+    if (gameInfo === '') {
+      this.setState({
+        gameInfoError: 'Enter any additional information about the game or type N/A in this field.',
+      });
+    }
   }
 
   handleClearFields = (event) => {
@@ -215,6 +232,8 @@ class CreateGameForm extends React.Component {
       gameStateError: '',
       gameZip: '',
       gameZipError: '',
+      gameInfo: '',
+      gameInfoError: '',
     });
   }
 
@@ -226,7 +245,8 @@ class CreateGameForm extends React.Component {
       gameGender, gameLocationError, gameLocation,
       gameAddressError, gameAddress, gameCityError,
       gameCity, gameStateError, gameState,
-      gameZipError, gameZip,
+      gameZipError, gameZip, gameInfo,
+      gameInfoError,
     } = this.state;
 
     return (
@@ -234,17 +254,40 @@ class CreateGameForm extends React.Component {
         <Typography component="p" className="instructionalText">
             Fill out the form to set up a game near you
         </Typography>
-        <FormControl className={classes.formControl} fullWidth>
-          <InputLabel htmlFor="game-date">Date</InputLabel>
-          <Input id="game-date" value={gameDate} onChange={this.handleGameDateChange} />
+        <FormControl className={classes.formControl}>
+          <TextField
+            id="game-date"
+            label="Date"
+            type="date"
+            defaultValue="2018-07-04"
+            value={gameDate}
+            onChange={this.handleGameDateChange}
+            InputLabelProps={{
+              shrink: true,
+            }}
+            className={classes.dateTimePickers}
+          />
           <Typography component="p" className={classes.formError}>
             {gameDateError}
           </Typography>
         </FormControl>
 
-        <FormControl className={classes.formControl} fullWidth>
-          <InputLabel htmlFor="game-time">Time</InputLabel>
-          <Input id="game-time" value={gameTime} onChange={this.handleGameTimeChange} />
+        <FormControl className={classes.formControl}>
+          <TextField
+            id="game-time"
+            label="Time"
+            type="time"
+            defaultValue="07:30"
+            className={classes.dateTimePickers}
+            InputLabelProps={{
+              shrink: true,
+            }}
+            inputProps={{
+              step: 300, // 5 min
+            }}
+            value={gameTime}
+            onChange={this.handleGameTimeChange}
+          />
           <Typography component="p" className={classes.formError}>
             {gameTimeError}
           </Typography>
@@ -403,6 +446,14 @@ class CreateGameForm extends React.Component {
           <Input id="game-zip" value={gameZip} onChange={this.handleGameZipChange} className={classes.textField} />
           <Typography component="p" className={classes.formError}>
             {gameZipError}
+          </Typography>
+        </FormControl>
+
+        <FormControl className={classes.formControl} fullWidth>
+          <InputLabel htmlFor="game-info">Additional information</InputLabel>
+          <Input id="game-info" value={gameInfo} onChange={this.handleGameInfoChange} />
+          <Typography component="p" className={classes.formError}>
+            {gameInfoError}
           </Typography>
         </FormControl>
         <div>
