@@ -22,6 +22,7 @@ import Home from '@material-ui/icons/Home';
 import AddCircle from '@material-ui/icons/AddCircle';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import EventAvailable from '@material-ui/icons/EventAvailable';
+import HelpOutline from '@material-ui/icons/HelpOutline';
 // import About Dialog
 import AboutDialog from '../../containers/AboutDialog';
 
@@ -74,6 +75,7 @@ class HamburgerMenu extends React.Component {
               <MenuItem onClick={this.handleClose} component={Link} to="/upcominggames"><EventAvailable /> Upcoming games</MenuItem>
               <MenuItem onClick={this.handleClose} component={Link} to="/nearby"><LocationOnIcon /> Search nearby</MenuItem>
               <AboutDialog />
+              <MenuItem onClick={this.handleClose} component={Link} to="/help"><HelpOutline /> Help </MenuItem>
             </Paper>
           </ClickAwayListener>
         ) : null}

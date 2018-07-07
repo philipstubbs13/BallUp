@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
@@ -9,20 +9,19 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const styles = theme => ({
   root: {
-    width: '100%',
+    width: '60%',
+    borderStyle: 'solid',
+    borderWidth: '3px',
+    borderColor: '#000022',
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
-    flexBasis: '33.33%',
+    flexBasis: '50%',
     flexShrink: 0,
-  },
-  secondaryHeading: {
-    fontSize: theme.typography.pxToRem(15),
-    color: theme.palette.text.secondary,
   },
 });
 
-class HelpAccordion extends Component {
+class HelpAccordion extends React.Component {
   state = {
     expanded: null,
   };
@@ -41,8 +40,7 @@ class HelpAccordion extends Component {
       <div className={classes.root}>
         <ExpansionPanel expanded={expanded === 'panel1'} onChange={this.handleChange('panel1')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className={classes.heading}>General settings</Typography>
-            <Typography className={classes.secondaryHeading}>I am an expansion panel</Typography>
+            <Typography className={classes.heading}>What is BallUp?</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
@@ -53,10 +51,7 @@ class HelpAccordion extends Component {
         </ExpansionPanel>
         <ExpansionPanel expanded={expanded === 'panel2'} onChange={this.handleChange('panel2')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className={classes.heading}>Users</Typography>
-            <Typography className={classes.secondaryHeading}>
-              You are currently not an owner
-            </Typography>
+            <Typography className={classes.heading}>How do I create a pickup game?</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
@@ -67,10 +62,7 @@ class HelpAccordion extends Component {
         </ExpansionPanel>
         <ExpansionPanel expanded={expanded === 'panel3'} onChange={this.handleChange('panel3')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className={classes.heading}>Advanced settings</Typography>
-            <Typography className={classes.secondaryHeading}>
-              Filtering has been entirely disabled for whole web server
-            </Typography>
+            <Typography className={classes.heading}>How can I see a list of upcoming games?</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
@@ -81,7 +73,7 @@ class HelpAccordion extends Component {
         </ExpansionPanel>
         <ExpansionPanel expanded={expanded === 'panel4'} onChange={this.handleChange('panel4')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className={classes.heading}>Personal data</Typography>
+            <Typography className={classes.heading}>How do I search for games in my area?</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
