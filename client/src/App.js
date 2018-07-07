@@ -12,6 +12,8 @@ import Home from './containers/Home';
 import Footer from './components/Footer';
 // import CreateGame component
 import CreateGame from './containers/CreateGame';
+// import Help component
+import Help from './containers/Help';
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
           <Route exact path="/" component={Login} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/newgame" component={CreateGame} />
+          <Route exact path="/help" component={Help} />
         </Switch>
         <Footer />
       </div>
