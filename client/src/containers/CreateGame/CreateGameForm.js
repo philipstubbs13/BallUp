@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Paper from '@material-ui/core/Paper';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -301,6 +299,9 @@ class CreateGameForm extends React.Component {
             className={classes.textField}
             value={gameAgeGroup}
             onChange={this.handleGameAgeGroupChange}
+            InputLabelProps={{
+              shrink: true,
+            }}
             SelectProps={{
               MenuProps: {
                 className: classes.menu,
@@ -332,6 +333,9 @@ class CreateGameForm extends React.Component {
             className={classes.textField}
             value={gameGender}
             onChange={this.handleGameGenderChange}
+            InputLabelProps={{
+              shrink: true,
+            }}
             SelectProps={{
               MenuProps: {
                 className: classes.menu,
@@ -349,24 +353,46 @@ class CreateGameForm extends React.Component {
         </FormControl>
 
         <FormControl className={classes.formControl} fullWidth>
-          <InputLabel htmlFor="game-location">Location</InputLabel>
-          <Input id="game-location" value={gameLocation} onChange={this.handleGameLocationChange} />
+          <TextField
+            label="Location (for example, Vista View Park)"
+            id="game-location"
+            value={gameLocation}
+            onChange={this.handleGameLocationChange}
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
           <Typography component="p" className={classes.formError}>
             {gameLocationError}
           </Typography>
         </FormControl>
 
         <FormControl className={classes.formControl} fullWidth>
-          <InputLabel htmlFor="game-address">Address line 1</InputLabel>
-          <Input id="game-address" value={gameAddress} onChange={this.handleGameAddressChange} />
+          <TextField
+            id="game-address"
+            value={gameAddress}
+            onChange={this.handleGameAddressChange}
+            label="Address line 1"
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
           <Typography component="p" className={classes.formError}>
             {gameAddressError}
           </Typography>
         </FormControl>
 
         <FormControl className={classes.formControl}>
-          <InputLabel htmlFor="game-city">City</InputLabel>
-          <Input id="game-city" value={gameCity} onChange={this.handleGameCityChange} className={classes.cityField} />
+          <TextField
+            id="game-city"
+            value={gameCity}
+            onChange={this.handleGameCityChange}
+            className={classes.cityField}
+            label="City"
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
           <Typography component="p" className={classes.formError}>
             {gameCityError}
           </Typography>
@@ -379,6 +405,9 @@ class CreateGameForm extends React.Component {
             className={classes.textField}
             value={gameState}
             onChange={this.handleGameStateChange}
+            InputLabelProps={{
+              shrink: true,
+            }}
             SelectProps={{
               MenuProps: {
                 className: classes.menu,
@@ -442,16 +471,31 @@ class CreateGameForm extends React.Component {
         </FormControl>
 
         <FormControl className={classes.formControl}>
-          <InputLabel htmlFor="game-zip">Zip code</InputLabel>
-          <Input id="game-zip" value={gameZip} onChange={this.handleGameZipChange} className={classes.textField} />
+          <TextField
+            id="game-zip"
+            value={gameZip}
+            onChange={this.handleGameZipChange}
+            className={classes.textField}
+            label="Zip code"
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
           <Typography component="p" className={classes.formError}>
             {gameZipError}
           </Typography>
         </FormControl>
 
         <FormControl className={classes.formControl} fullWidth>
-          <InputLabel htmlFor="game-info">Additional information</InputLabel>
-          <Input id="game-info" value={gameInfo} onChange={this.handleGameInfoChange} />
+          <TextField
+            id="game-info"
+            value={gameInfo}
+            onChange={this.handleGameInfoChange}
+            label="Additional information"
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
           <Typography component="p" className={classes.formError}>
             {gameInfoError}
           </Typography>
