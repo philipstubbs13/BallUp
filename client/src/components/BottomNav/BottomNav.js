@@ -14,7 +14,6 @@ import Home from '@material-ui/icons/Home';
 import AddCircle from '@material-ui/icons/AddCircle';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import EventAvailable from '@material-ui/icons/EventAvailable';
-import HelpOutline from '@material-ui/icons/HelpOutline';
 // import Hidden component from material ui to hide bottom navigation on xs screens and down.
 import Hidden from '@material-ui/core/Hidden';
 
@@ -50,7 +49,6 @@ class BottomNav extends React.Component {
           <BottomNavigationAction label="Create game" value="create_game" icon={<AddCircle />} className={classes.navIcon} component={Link} to="/newgame" />
           <BottomNavigationAction label="Upcoming games" value="games" icon={<EventAvailable />} className={classes.navIcon} component={Link} to="/upcominggames" />
           <BottomNavigationAction label="Nearby" value="nearby" icon={<LocationOnIcon />} className={classes.navIcon} component={Link} to="/nearby" />
-          <BottomNavigationAction label="Help" value="help" icon={<HelpOutline />} className={classes.navIcon} component={Link} to="/help" />
         </BottomNavigation>
       </Hidden>
     );
