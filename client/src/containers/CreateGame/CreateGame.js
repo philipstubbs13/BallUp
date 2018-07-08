@@ -18,11 +18,9 @@ const styles = theme => ({
   root: {
     flexGrow: 1,
   },
-
-  title: {
-    margin: `${theme.spacing.unit * 4}px 0 ${theme.spacing.unit * 2}px`,
-    textAlign: 'center',
-    fontSize: 50,
+  headline: {
+    fontSize: 40,
+    color: 'white',
   },
 });
 
@@ -33,19 +31,21 @@ class CreateGame extends Component {
     return [
       <div>
         <TopAppBar />
-        <Grid item xs={12}>
-          <Grid container className={classes.root} spacing={0} justify="center">
-            <Typography variant="title" className={classes.title}>
-              <b>Ready to play?</b>
-            </Typography>
-          </Grid>
-        </Grid>
-        <div className="main-content-section">
-          <Grid item xs={12}>
+        <div style={{ paddingTop: 100 }}>
+          <Grid item xs={12} className={classes.headline}>
             <Grid container className={classes.root} spacing={0} justify="center">
-              <CreateGameForm />
+              <Typography variant="h1">
+                  Ready to play?
+              </Typography>
             </Grid>
           </Grid>
+          <div className="main-content-section">
+            <Grid item xs={12}>
+              <Grid container className={classes.root} spacing={0} justify="center">
+                <CreateGameForm />
+              </Grid>
+            </Grid>
+          </div>
         </div>
         <BottomNav />
       </div>,
