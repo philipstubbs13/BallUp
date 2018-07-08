@@ -52,7 +52,7 @@ function TopAppBar(props) {
           <Typography variant="title" color="inherit" className={classes.welcomeUser}>
             Welcome, Jax
           </Typography>
-          <Button color="inherit">
+          <Button color="inherit" href="/api/logout">
             Logout
           </Button>
         </Toolbar>
