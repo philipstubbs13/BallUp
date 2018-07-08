@@ -7,6 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import HelpAccordion from './HelpAccordion';
 // Import Top Navigation Bar Component.
 import TopAppBar from '../../components/AppBar';
+// Import bottom navigation
+import BottomNav from '../../components/BottomNav';
 
 const styles = {
   root: {
@@ -29,9 +31,9 @@ class Help extends Component {
 
     return [
       <TopAppBar />,
-      <div style={{ padding: 70 }}>
+      <div style={{ paddingTop: 70 }}>
         <Grid item xs={12} className={classes.headline}>
-          <Grid container spacing={16} className={classes.root} justify="center">
+          <Grid container spacing={0} className={classes.root} justify="center">
             <Typography variant="h1">
                 Help
             </Typography>
@@ -40,11 +42,12 @@ class Help extends Component {
         ,
         <div className="main-content-section">
           <Grid item xs={12}>
-            <Grid container className={classes.root} spacing={16} justify="center">
+            <Grid container className={classes.root} spacing={0} justify="center">
               <HelpAccordion />
             </Grid>
           </Grid>
         </div>
+        <BottomNav />
       </div>,
     ];
   }

@@ -69,17 +69,17 @@ class Home extends Component {
         ,
         <div className="main-content-section">
           <Grid item xs={12}>
-            <Grid container className={classes.root} spacing={16} justify="center">
+            <Grid container className={classes.root} spacing={0} justify="center">
               <Typography variant="title" className={classes.title}>
                 Get up and play!
               </Typography>
             </Grid>
-            <Grid container spacing={16} justify="center">
+            <Grid container spacing={0} justify="center">
               <Typography component="p" className={classes.instructionalText}>
                 Click below to get started
               </Typography>
             </Grid>
-            <Grid container spacing={16} justify="center">
+            <Grid container spacing={0} justify="center">
               <div className={classes.demo}>
                 <List>
                   <ListItem className={classes.listItem} component={Link} to="/newgame">

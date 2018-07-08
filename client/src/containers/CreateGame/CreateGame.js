@@ -34,7 +34,7 @@ class CreateGame extends Component {
       <div>
         <TopAppBar />
         <Grid item xs={12}>
-          <Grid container className={classes.root} spacing={16} justify="center">
+          <Grid container className={classes.root} spacing={0} justify="center">
             <Typography variant="title" className={classes.title}>
               <b>Ready to play?</b>
             </Typography>
@@ -42,7 +42,7 @@ class CreateGame extends Component {
         </Grid>
         <div className="main-content-section">
           <Grid item xs={12}>
-            <Grid container className={classes.root} spacing={16} justify="center">
+            <Grid container className={classes.root} spacing={0} justify="center">
               <CreateGameForm />
             </Grid>
           </Grid>
