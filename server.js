@@ -1,14 +1,10 @@
-const express = require('express');
 const mongoose = require('mongoose');
+const express = require('express');
 const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 const passport = require('passport'); // at header
 // require keys
 const keys = require('./config/keys');
-// Require database models
-require('./models/User');
-require('./models/Game');
-require('./services/passport');
 
 // connect to MongoDB database.
 mongoose.connect(keys.mongoURI);
@@ -36,6 +32,11 @@ app.use(passport.session());
 require('./routes/authRoutes')(app);
 // require('./routes/billingRoutes')(app);
 // require('./routes/surveyRoutes')(app);
+
+// Require database models
+require('./models/User');
+require('./models/Game');
+require('./services/passport');
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === 'production') {

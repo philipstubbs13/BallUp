@@ -2,9 +2,16 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const userSchema = new Schema({
+const UserSchema = new Schema({
   googleId: String,
-  games: { type: Number, default: 0 },
+  googleDisplayName: String,
+  games: {
+    type: Number,
+    default: 0,
+  },
 });
 
-mongoose.model('users', userSchema);
+const User = mongoose.model('User', UserSchema);
+
+// Export the User model
+module.exports = User;

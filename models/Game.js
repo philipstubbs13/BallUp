@@ -5,11 +5,6 @@ const { Schema } = mongoose;
 // const PlayerSchema = require('./Player');
 
 const GameSchema = new Schema({
-  gameName: {
-    type: String,
-    trim: true,
-    required: 'Name is required',
-  },
   gameDate: {
     type: Date,
     trim: true,
@@ -66,7 +61,10 @@ const GameSchema = new Schema({
   },
 });
 
-mongoose.model('games', GameSchema);
+const Game = mongoose.model('Game', GameSchema);
+
+// Export the Game model
+module.exports = Game;
 
 // title: String,
 // body: String,
