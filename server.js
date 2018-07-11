@@ -31,7 +31,9 @@ app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 // require('./routes/billingRoutes')(app);
-// require('./routes/surveyRoutes')(app);
+// require('./routes')(app);
+// Add routes, both API and view.
+// app.use(routes);
 
 // Require database models
 require('./models/User');

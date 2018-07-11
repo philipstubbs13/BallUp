@@ -1,10 +1,7 @@
 const passport = require('passport');
 const path = require('path');
 const router = require('express').Router();
-const apiRoutes = require('./api');
-
-// API Routes
-router.use('/api', apiRoutes);
+// const apiRoutes = require('./api');
 
 /* GET Google Authentication API. */
 router.get(
@@ -20,5 +17,8 @@ router.get(
     res.redirect('http://localhost:3000?token=' + token);
   },
 );
+
+// API Routes
+// router.use('/api', apiRoutes);
 
 module.exports = router;

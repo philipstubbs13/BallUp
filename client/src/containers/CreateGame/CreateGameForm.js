@@ -18,6 +18,8 @@ import Typography from '@material-ui/core/Typography';
 import './CreateGame.css';
 // import material ui button component.
 import Button from '@material-ui/core/Button';
+// Import API
+import GameAPI from '../../utils/GameAPI';
 
 // styling of create game form
 const styles = theme => ({
@@ -260,6 +262,24 @@ class CreateGameForm extends React.Component {
       this.setState({
         gameInfoError: 'Enter any additional information about the game or type N/A in this field.',
       });
+    } else {
+      // Save game to database if all fields are filled out.
+      // Show form success message to user.
+      GameAPI.saveGame({
+        gameDate: gameDate,
+        gameTime: gameTime,
+        ageGroup: gameAgeGroup,
+        gender: gameGender,
+        location: gameLocation,
+        address: gameAddress,
+        city: gameCity,
+        state: gameState,
+        zipCode: gameZip,
+        info: gameInfo,
+      })
+        // .then(res => this.loadGames())
+        .catch(err => console.log(err));
+      console.log('saved to db');
     }
   }
 

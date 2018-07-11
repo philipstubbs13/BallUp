@@ -82,7 +82,7 @@ class Home extends Component {
             <Grid container spacing={0} justify="center">
               <div className={classes.demo}>
                 <List>
-                  <ListItem className={classes.listItem} component={Link} to="/newgame">
+                  <ListItem key="1" className={classes.listItem} component={Link} to="/newgame">
                     <ListItemIcon>
                       <AddCircle />
                     </ListItemIcon>
@@ -92,7 +92,7 @@ class Home extends Component {
                     />
                   </ListItem>
                   <Divider className={classes.listDivider} />
-                  <ListItem className={classes.listItem} component={Link} to="/upcominggames">
+                  <ListItem key="2" className={classes.listItem} component={Link} to="/upcominggames">
                     <ListItemIcon>
                       <EventAvailable />
                     </ListItemIcon>
@@ -102,7 +102,7 @@ class Home extends Component {
                     />
                   </ListItem>
                   <Divider className={classes.listDivider} />
-                  <ListItem className={classes.listItem} component={Link} to="/nearby">
+                  <ListItem key="3" className={classes.listItem} component={Link} to="/nearby">
                     <ListItemIcon>
                       <LocationOnIcon />
                     </ListItemIcon>
@@ -112,7 +112,7 @@ class Home extends Component {
                     />
                   </ListItem>
                   <Divider className={classes.listDivider} />
-                  <ListItem className={classes.listItem} component={Link} to="/help">
+                  <ListItem key="4" className={classes.listItem} component={Link} to="/help">
                     <ListItemIcon>
                       <HelpOutline />
                     </ListItemIcon>
