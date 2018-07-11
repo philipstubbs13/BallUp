@@ -30,7 +30,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require('./routes/authRoutes')(app);
-// require('./routes/billingRoutes')(app);
+require('./routes/gameRoutes')(app);
 // require('./routes')(app);
 // Add routes, both API and view.
 // app.use(routes);
